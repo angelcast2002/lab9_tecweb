@@ -5,7 +5,7 @@ import style from "./Display.module.css"
 const Display = ({ num }) => {
   return (
     <div className={style.displayContainer}>
-      <span>{num}</span>
+      <span data-testid="number">{num}</span>
     </div>
   )
 }
