@@ -1,0 +1,20 @@
+.calculatorContainer {
+  background-color: #fff;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  max-width: 215px;
+  gap: 5px;
+}
+
+.displayContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonContainer {
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

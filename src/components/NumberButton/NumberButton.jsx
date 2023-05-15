@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import style from "./NumberButton.module.css"
 
-const NumberButton = ({ label, backgroundColor, textColor, onClick }) => {
+const NumberButton = ({
+  label,
+  backgroundColor,
+  textColor,
+  onClick,
+  width,
+}) => {
   const [align, setAlign] = useState("center")
   useEffect(() => {
     if (label === "0") {
@@ -19,6 +25,7 @@ const NumberButton = ({ label, backgroundColor, textColor, onClick }) => {
         style={{
           backgroundColor,
           alignItems: align,
+          width,
         }}
       >
         <span
@@ -39,6 +46,7 @@ NumberButton.propTypes = {
   backgroundColor: PropTypes.string,
   textColor: PropTypes.string,
   onClick: PropTypes.func.isRequired,
+  width: PropTypes.string.isRequired,
 }
 
 NumberButton.defaultProps = {
