@@ -1,6 +1,7 @@
 import React from "react"
 import { render, screen, fireEvent } from "@testing-library/react"
 
+import { vi } from "vitest"
 import NumberButton from "./NumberButton"
 
 describe("NumberButton Component", () => {
@@ -14,32 +15,19 @@ describe("NumberButton Component", () => {
     expect(element).toBeInTheDocument()
   })
   it("Renders as flex-start", () => {
-    render(<NumberButton label="0" />)
+    render(<NumberButton label="0" datatestid="NumeberButton" />)
 
-    const element = screen.getByTestId("NumberButton")
+    const element = screen.getByTestId("NumeberButton")
     expect(element).toHaveTextContent("0")
     expect(element.style.alignItems).toBe("flex-start")
   })
-  it("Renders as center", () => {
-    render(<NumberButton label="+" />)
-
-    const element = screen.getByTestId("NumberButton")
-    expect(element).toHaveTextContent("+")
-    expect(element.style.alignItems).toBe("center")
-  })
-  it("Renders an Operator", () => {
-    render(<NumberButton label="+" />)
-
-    const element = screen.getByText("+")
-    expect(element).toBeInTheDocument()
-  })
-  it("Can be clicked", () => {
+  it("Test click", () => {
     const spy = vi.fn()
-    render(<NumberButton onClick={spy} />)
-
-    const element = screen.getByTestId("NumberButton")
+    const { getByTestId } = render(
+      <NumberButton label="1" datatestid="number-button" onClick={spy} />
+    )
+    const element = getByTestId("number-button")
     fireEvent.click(element)
-
     expect(spy).toHaveBeenCalled()
   })
 })

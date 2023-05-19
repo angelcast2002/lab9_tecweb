@@ -8,6 +8,7 @@ const NumberButton = ({
   textColor,
   onClick,
   width,
+  datatestid,
 }) => {
   const [align, setAlign] = useState("center")
   useEffect(() => {
@@ -21,7 +22,7 @@ const NumberButton = ({
         type="button"
         className={style.button}
         onClick={onClick}
-        data-testid="NumberButton"
+        data-testid={datatestid}
         style={{
           backgroundColor,
           alignItems: align,
@@ -47,6 +48,7 @@ NumberButton.propTypes = {
   textColor: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   width: PropTypes.string.isRequired,
+  datatestid: PropTypes.string.isRequired,
 }
 
 NumberButton.defaultProps = {

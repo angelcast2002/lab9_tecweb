@@ -271,7 +271,7 @@ const Calculator = () => {
   return (
     <div className={style.calculatorContainer}>
       <div className={style.displayContainer}>
-        <Display num={numToUse === "1" ? num : num2} />
+        <Display data-testid="Display" num={numToUse === "1" ? num : num2} />
       </div>
       <div className={style.buttonContainer}>
         {labelsNumberButton.map((label) => {
@@ -279,6 +279,7 @@ const Calculator = () => {
             case "0":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -289,6 +290,7 @@ const Calculator = () => {
             case "C":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -299,6 +301,7 @@ const Calculator = () => {
             case "+/-":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -309,6 +312,7 @@ const Calculator = () => {
             case "%":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -319,6 +323,7 @@ const Calculator = () => {
             case "/":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -329,6 +334,7 @@ const Calculator = () => {
             case "x":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -339,6 +345,7 @@ const Calculator = () => {
             case "+":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -349,6 +356,7 @@ const Calculator = () => {
             case "=":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -359,6 +367,7 @@ const Calculator = () => {
             case "-":
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
@@ -369,6 +378,7 @@ const Calculator = () => {
             default:
               return (
                 <NumberButton
+                  data-testid={label}
                   key={label}
                   label={label}
                   onClick={onClick}
