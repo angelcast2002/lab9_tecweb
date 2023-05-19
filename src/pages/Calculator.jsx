@@ -4,30 +4,11 @@ import style from "./Calculator.module.css"
 import Display from "../components/Display/Display"
 import NumberButton from "../components/NumberButton/NumberButton"
 
-// label, backgroundColor, textColor, onClick
-
 const Calculator = () => {
   const [num, setNum] = useState("0")
   const [num2, setNum2] = useState("")
   const [operator, setOperator] = useState("")
   const [numToUse, setNumToUse] = useState("1")
-
-  // Debug
-  // useEffect(() => {
-  console.log("NumToUse: ", numToUse)
-  // }, [numToUse])
-
-  // useEffect(() => {
-  console.log("Operator: ", operator)
-  // }, [operator])
-
-  // useEffect(() => {
-  console.log("Num: ", num)
-  // }, [num])
-
-  // useEffect(() => {
-  console.log("Num2: ", num2)
-  // }, [num2])
 
   const labelsNumberButton = [
     "C",
@@ -147,8 +128,10 @@ const Calculator = () => {
         } else {
           result = `${parseFloat(num, 10) / parseFloat(num2, 10)}`
           decimales = `${result.split(".")[0]}`
-          result = `${(parseFloat(num, 10) / parseFloat(num2, 10)).toFixed(
-            8 - decimales.length
+          result = `${parseFloat(
+            (parseFloat(num, 10) / parseFloat(num2, 10)).toFixed(
+              8 - decimales.length
+            )
           )}`
           if (result.length < 10) {
             setNum(result)
@@ -300,7 +283,7 @@ const Calculator = () => {
                   label={label}
                   onClick={onClick}
                   backgroundColor="#000"
-                  width="105px"
+                  width="102.5px"
                 />
               )
             case "C":
